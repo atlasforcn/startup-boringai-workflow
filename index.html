@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BoringAI 工作流平台原型</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="ai-app">
+      <section class="hero">
+        <div>
+          <p>BoringAI / U-start 114</p>
+          <h1>把團隊每天重複的 AI 任務，整理成可追蹤、可比較、可交付的工作流。</h1>
+        </div>
+        <div class="signal">
+          <span>本週可交付率</span>
+          <strong id="deliveryRate">0%</strong>
+        </div>
+      </section>
+
+      <section class="metrics">
+        <article><span>任務</span><strong id="taskCount">0</strong></article>
+        <article><span>提示詞版本</span><strong id="promptCount">0</strong></article>
+        <article><span>平均品質</span><strong id="qualityScore">0</strong></article>
+        <article><span>節省時數</span><strong id="savedHours">0</strong></article>
+      </section>
+
+      <section class="layout">
+        <div class="panel tasks">
+          <div class="panel-head">
+            <div>
+              <p>Workflow board</p>
+              <h2>AI 任務看板</h2>
+            </div>
+            <select id="statusFilter">
+              <option value="all">全部狀態</option>
+              <option value="draft">草稿</option>
+              <option value="review">審核</option>
+              <option value="done">可交付</option>
+            </select>
+          </div>
+          <div id="taskBoard" class="task-board"></div>
+        </div>
+
+        <aside class="side">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p>Prompt lab</p>
+                <h2>提示詞版本</h2>
+              </div>
+            </div>
+            <form id="promptForm" class="stack">
+              <label>
+                任務名稱
+                <input name="title" required placeholder="例：客服回覆摘要">
+              </label>
+              <label>
+                提示詞摘要
+                <textarea name="prompt" rows="4" required>請將輸入內容整理成三段式回覆，保留風險與下一步。</textarea>
+              </label>
+              <button type="submit">新增版本</button>
+            </form>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p>Model compare</p>
+                <h2>模型比較</h2>
+              </div>
+            </div>
+            <div id="modelList" class="model-list"></div>
+            <button id="rerank" class="secondary" type="button">重新評分</button>
+          </section>
+
+          <section class="panel source">
+            <span>比賽來源</span>
+            <strong>U-start 創新創業計畫 / 114 年度第二階段績優團隊</strong>
+            <p>作品：BoringAI。學校：國立臺灣科技大學。公司：博靈有限公司。</p>
+            <a href="https://ustart.yda.gov.tw/p/405-1000-2178,c147.php?Lang=zh-tw" target="_blank" rel="noreferrer">官方得獎名單</a>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
