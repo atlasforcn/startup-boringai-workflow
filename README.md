@@ -1,5 +1,21 @@
 # BoringAI 工作流平台原型
 
+## 快速看懂
+
+![startup-boringai-workflow 功能截圖](docs/preview.png)
+
+- 線上 Demo：https://atlasforcn.github.io/startup-boringai-workflow/
+- 這個原型在做什麼：把 BoringAI 做成 AI 工作流平台，用任務節點串起資料、模型與輸出。
+- 特色定位：特色是呈現「把無聊重複工作自動化」的流程感，而不是單一聊天框。
+- 操作流程：選擇工作流範本 → 設定資料輸入與 AI 任務節點 → 查看執行結果、節省時間與待處理項目
+
+<details>
+<summary>展開完整功能流程截圖</summary>
+
+![startup-boringai-workflow 完整功能流程截圖](docs/flow.png)
+
+</details>
+
 ## 比賽來源
 
 - 競賽：U-start 創新創業計畫
